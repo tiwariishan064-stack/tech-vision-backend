@@ -11,13 +11,15 @@ app.use(cors());
 
 // Create MySQL Connection Pool
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root',         // Change to your MySQL username
-  password: 'ishan', // Change to your MySQL password
-  database: 'tech_vision_db',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT || 3306,
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  ssl: { rejectUnauthorized: false } // Required for Aiven cloud database
 });
 
 // Test Database Connection
@@ -65,7 +67,7 @@ app.post('/api/register', (req, res) => {
 });
 
 // Start Server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
