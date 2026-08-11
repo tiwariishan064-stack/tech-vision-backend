@@ -15,7 +15,7 @@ app.post('/api/register', (req, res) => {
     res.json({ success: true, message: "Registration complete!" });
 
     // 2. FIRE AND FORGET: Send data to Google Sheets in the background
-    fetch('https://script.google.com/macros/s/AKfycby5zD1HSQZdai6X-QUWmcfCRL4yoXFH12RcS_d7WtEDDYxXad4XXfTc2klPfFoNybZLQg/exec', { // Make sure this is your LATEST Version 5 URL!
+    fetch('https://script.google.com/macros/s/AKfycbzLYsoed2iICO8wBnIKKMugk86nV5ZaTusxBNhBfQb9Jl_qCuyWmmzdyWrcAeMwpjaeFQ/exec', { // Make sure this is your LATEST Version 5 URL!
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
