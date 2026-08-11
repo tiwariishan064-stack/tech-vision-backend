@@ -13,7 +13,7 @@ app.post('/api/register', async (req, res) => {
 
     try {
         // Send data to your Google Sheets Web App
-        await fetch('https://script.google.com/macros/s/AKfycby5zD1HSQZdai6X-QUWmcfCRL4yoXFH12RcS_d7WtEDDYxXad4XXfTc2klPfFoNybZLQg/exec', {
+        await fetch('https://script.google.com/macros/s/AKfycbzLYsoed2iICO8wBnIKKMugk86nV5ZaTusxBNhBfQb9Jl_qCuyWmmzdyWrcAeMwpjaeFQ/exec', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
